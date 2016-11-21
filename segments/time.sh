@@ -1,6 +1,6 @@
 # Prints the current time.
 
-TMUX_POWERLINE_SEG_TIME_FORMAT_DEFAULT="%H:%M"
+TMUX_POWERLINE_SEG_TIME_FORMAT_DEFAULT="%H:%M %Z"
 
 generate_segmentrc() {
 	read -d '' rccontents  << EORC
@@ -18,6 +18,6 @@ __process_settings() {
 
 run_segment() {
         __process_settings
-	date +"$TMUX_POWERLINE_SEG_TIME_FORMAT"
+	echo $(date -u +"$TMUX_POWERLINE_SEG_TIME_FORMAT") $(date +"$TMUX_POWERLINE_SEG_TIME_FORMAT")
 	return 0
 }
