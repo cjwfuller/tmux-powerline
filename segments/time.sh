@@ -18,6 +18,6 @@ __process_settings() {
 
 run_segment() {
         __process_settings
-	echo $(date -u +"$TMUX_POWERLINE_SEG_TIME_FORMAT") $(date +"$TMUX_POWERLINE_SEG_TIME_FORMAT")
+	echo $(date +"$TMUX_POWERLINE_SEG_TIME_FORMAT") $TMUX_POWERLINE_SEPARATOR_LEFT_THIN $(date -u +"$TMUX_POWERLINE_SEG_TIME_FORMAT")
 	return 0
 }
